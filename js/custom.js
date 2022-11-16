@@ -1,4 +1,21 @@
 /*  ///////////////////  FUNÇÕES   ////////////////////  */
+
+
+//ao carregar a pagina verifica o parametro "cadastro", se o valor for ok exibe um alert
+const urlParams =  new URLSearchParams(window.location.search)
+var parCadastro = urlParams.get('cadastro')
+if(parCadastro == 'ok'){
+  let listaclasses = document.getElementById('msg').classList
+  listaclasses.remove('d-none')
+  //alert('usuario cadastrado!')
+  //window.location.href = '/explore_php/'
+}
+
+
+
+
+
+
 const aviso = (msg)=> {
     alert(msg)
 }

@@ -33,19 +33,22 @@ try{
         ':email' => $email,
         ':sexo' => $sexo,
         ':telefone' => $telefone,
-        ':senha' => md5($senha),
+        ':senha' => md5($senha), //coloca criptografia na senha
         ':estado' => $estado,
         ':cidade' => $cidade,
-        ':destinos' => $destinos,
+        ':destinos' => implode(', ', $destinos), //converte array em texto
         ':idade' => $idade,
         ':hospedagem' => $hospedagem,
         ':dt_cadastro' => date('Y-m-d', strtotime($dt_cadastro)),
         ':mensagem' => $mensagem,
 
         ));
+        //carrega a pagina index.html enviando variavel GET cadastro
+        //para separar parametros, usa &
+        header('Location: index.html?cadastro=ok');
 
-    echo '<h1> usuario cadastrado </h1>';
-    var_dump($_POST);
+    /* echo '<h1> usuario cadastrado </h1>';
+    var_dump($_POST); */
 
 } catch (PDOException $erro) {
     //se der erro, exibe o erro aqui

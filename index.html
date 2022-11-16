@@ -67,6 +67,12 @@
   </header>
 
   <main class="col-lg-10 offset-lg-1 mt-5">
+    
+    <div id = "msg" class="d-none alert alert-success alert-dismissible fade show" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <strong>Usuario cadastrado</strong>
+    </div>
+    
     <section id="banner-topo" class="d-none d-md-block">
       <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
@@ -407,6 +413,12 @@
   
   <script src="js/custom.js"></script>
 
+  <script>
+    var alertList = document.querySelectorAll('.alert');
+    alertList.forEach(function (alert) {
+      new bootstrap.Alert(alert)
+    })
+  </script>
   
 </body>
 
